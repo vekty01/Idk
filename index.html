@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e9e2d2">
+<title>A surprise for Tamanna</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Special+Elite&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+:root{--ink:#3b2f2a;--soft:#8a7566;--rose:#b5594e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;background-color:#e9e2d2;background-image:radial-gradient(#cdbda4 .8px,transparent .8px);background-size:24px 24px;font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink)}
+#stage{position:fixed;inset:0}
+.page{position:absolute;inset:14px 16px 16px 12px;z-index:1;padding:32px 20px 30px 34px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow-y:auto;overflow-x:hidden;border-radius:2px;background-color:#f4ecd9;box-shadow:0 10px 26px rgba(60,40,20,.3),4px 5px 0 #ece1ca,8px 10px 0 #e2d5ba;opacity:0;visibility:hidden;transform:translateX(46px) rotate(1.4deg);transition:opacity .8s ease,transform 1.1s cubic-bezier(.2,.7,.2,1),visibility 0s 1.1s}
+.page.active{z-index:2;opacity:1;visibility:visible;transform:none;transition:opacity .8s ease,transform 1.1s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.page.past{transform:translateX(-46px) rotate(-1.4deg)}
+.page::before{content:"";position:absolute;left:0;top:0;bottom:0;width:30px;background:linear-gradient(90deg,rgba(70,40,15,.14),transparent);z-index:-1}
+.page::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(transparent 33px,rgba(110,140,165,.16) 34px) 0 0/100% 34px}
+.gp{position:absolute;top:9px;left:50%;margin-left:-10px;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e98a7e,#a8453b 70%);box-shadow:2px 5px 6px rgba(0,0,0,.3)}
+h1,h2{font-family:'Caveat',cursive;font-weight:700;color:var(--rose);margin:.15em 0 .3em;line-height:1.02}
+h1{font-size:clamp(46px,14vw,84px)}h2{font-size:clamp(26px,7vw,38px);max-width:430px}
+p{font-style:italic;font-size:clamp(18px,4.5vw,22px);line-height:1.4;max-width:430px;margin:.4em auto}
+.lab{display:inline-block;font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#991b1b;border:2px dashed #991b1b;padding:3px 12px;border-radius:3px;margin-bottom:6px}
+.bt{font-family:'Caveat',cursive;font-size:26px;background:var(--rose);color:#fff8ee;border:0;padding:6px 28px;border-radius:2px;cursor:pointer;box-shadow:0 3px 0 #8d3f36;margin:8px}
+.bt:active{transform:translateY(2px);box-shadow:0 1px 0 #8d3f36}
+.r{opacity:0}.active .r{animation:rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*.16s + .2s)}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+/* timer plates */
+.dg{display:flex;gap:6px;align-items:flex-start;justify-content:center;margin:8px 0 4px}
+.dg div{background:#fffdf7;border:1px solid rgba(90,70,50,.3);box-shadow:inset 0 2px 5px rgba(60,40,20,.18),0 3px 6px rgba(60,40,20,.2);padding:6px 8px 2px;min-width:56px}
+.dg b{display:block;font-family:'Special Elite',monospace;font-size:clamp(26px,8vw,34px);font-weight:400;line-height:1.1}
+.dg i{display:block;font-family:'Special Elite',monospace;font-style:normal;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);padding:2px 0 3px}
+.dg em{font-family:'Special Elite',monospace;font-style:normal;font-size:26px;line-height:1.5;color:var(--rose)}
+.tick{animation:tk .3s}@keyframes tk{from{transform:translateY(-6px);opacity:.3}to{transform:none;opacity:1}}
+/* envelope on cover */
+.env{width:150px;height:100px;position:relative;margin:10px auto 6px;animation:wob 2.6s ease-in-out infinite}
+@keyframes wob{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg) translateY(-4px)}}
+.env svg{width:100%;height:100%;filter:none}
+.seal{transform-box:fill-box;transform-origin:center;animation:beat 1.1s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.18)}}
+/* questions */
+.pcs{display:flex;gap:12px;justify-content:center;margin:2px 0 12px}
+.pc{width:18px;height:18px;border:2px dashed var(--rose);transform:rotate(45deg);transition:background .4s}
+.pc.on{background:var(--rose);border-style:solid}.pc.pop{animation:pcp .7s}
+@keyframes pcp{0%{transform:rotate(45deg) scale(.4)}60%{transform:rotate(225deg) scale(1.5)}100%{transform:rotate(45deg) scale(1)}}
+.ops{display:grid;gap:10px;width:min(84vw,380px);margin-top:8px}
+.op{display:flex;align-items:center;gap:12px;width:100%;padding:9px 14px;background:#fffdf7;border:1px solid rgba(90,70,50,.3);box-shadow:0 3px 8px rgba(60,40,20,.2);font:700 clamp(18px,4.8vw,22px) 'Cormorant Garamond',serif;color:var(--ink);cursor:pointer;text-align:left;transform:rotate(var(--r,0deg));transition:background .4s,border-color .4s}
+.op:active{transform:scale(.98)}
+.op b{font-family:'Special Elite',monospace;font-size:12px;border:1px dashed var(--rose);color:var(--rose);width:24px;height:24px;display:grid;place-items:center;flex:none}
+.op.bad{background:#f6dcd3;border-color:#c8323f;animation:shk .45s;pointer-events:none;opacity:.7}
+.op.ok{background:#e9f1dc;border-color:#6f9a63;animation:pop .7s}
+.done .op{pointer-events:none}
+@keyframes shk{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+@keyframes pop{0%{transform:scale(.9)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
+.qm{min-height:54px;font-family:'Caveat',cursive;font-size:23px;color:var(--soft);margin:10px 0 0;line-height:1.1;font-style:normal}
+/* gift */
+.gift{width:min(48vw,190px);cursor:pointer;margin:6px auto}
+.gift svg{width:100%;height:auto;overflow:visible}
+.gift:not(.open){animation:gsh 1.6s infinite}
+@keyframes gsh{0%,60%,100%{transform:none}65%{transform:rotate(-5deg)}75%{transform:rotate(5deg)}85%{transform:rotate(-3deg)}}
+.lid{transition:transform 1s cubic-bezier(.3,1.6,.5,1)}.gift.open .lid{transform:translate(8px,-58px) rotate(18deg)}
+.gift.open{opacity:0;transition:opacity .6s .9s}
+#rv{display:none;flex-direction:column;align-items:center;width:100%}
+#rv.show{display:flex}
+.hb{line-height:.95;margin:6px 0 0;font-size:clamp(32px,9.6vw,60px)}.hb b{display:inline-block;opacity:0;font-weight:700}
+#rv.show .hb b{animation:lt 1.1s cubic-bezier(.2,.9,.3,1.25) both;animation-delay:calc(var(--k)*.08s + .3s)}
+@keyframes lt{from{opacity:0;transform:translateY(-70px) rotate(-14deg) scale(.5)}to{opacity:1;transform:none}}
+.nm{font-size:clamp(54px,18vw,100px);margin:0}.nm span{display:inline-block;background:linear-gradient(90deg,#b5594e,#e8a33d,#c98f9c,#b5594e);background-size:250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shm 5s linear infinite}
+@keyframes shm{to{background-position:250% 0}}
+.fd{opacity:0}#rv.show .fd{animation:rise .9s both;animation-delay:calc(var(--i)*.5s + 2.2s)}
+#fw{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#bl{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.bln{position:absolute;bottom:-90px;width:44px;height:56px;border-radius:50% 50% 48% 48%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.5),transparent 40%),var(--c);animation:rs 10s linear infinite;animation-delay:var(--dl);opacity:.9}
+.bln::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:60px;background:rgba(90,70,50,.4)}
+@keyframes rs{to{transform:translate(var(--sw),-125vh) rotate(8deg)}}
+.bit{position:fixed;width:10px;height:14px;pointer-events:none;z-index:9;animation:fall 2.6s ease-in forwards}
+@keyframes fall{to{transform:translate(var(--x),105vh) rotate(720deg);opacity:.8}}
+/* music */
+#mp{position:fixed;right:14px;top:calc(env(safe-area-inset-top,0px) + 14px);z-index:6;display:none;flex-direction:column;align-items:flex-end;gap:6px}
+#mp.show{display:flex}
+#mp button{font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;background:rgba(250,244,230,.95);color:var(--ink);border:1px solid rgba(90,70,50,.3);box-shadow:0 2px 6px rgba(60,40,20,.25);cursor:pointer}
+#mpp{display:none;flex-direction:column;gap:10px;background:rgba(250,244,230,.97);padding:12px 14px;width:180px;border:1px solid rgba(90,70,50,.3);box-shadow:0 6px 16px rgba(60,40,20,.3);font-family:'Special Elite',monospace;font-size:12px}
+#mpp.open{display:flex}#mpp label{display:flex;flex-direction:column;gap:4px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+#mpp input{width:100%;accent-color:#b5594e}#mpp button{align-self:flex-start}
+@media (max-height:760px){.page{padding-top:26px;padding-bottom:22px}h2{font-size:clamp(22px,3.7vh,30px)}.lab{font-size:11px;margin-bottom:2px}.pcs{margin-bottom:6px}.op{padding:6px 12px}.ops{gap:7px}.qm{min-height:40px;font-size:21px;margin-top:6px}.env{width:120px;height:80px}.gift{width:min(40vw,150px)}.dg div{padding:4px 6px 1px;min-width:50px}}
+@media (max-height:640px){.env{display:none}p{font-size:17px;margin:.25em auto}.hb{font-size:clamp(28px,8vw,44px)}.nm{font-size:clamp(46px,15vw,70px)}}
+</style></head><body>
+<div id="stage"></div>
+<div id="mp"><button id="mt0">Music</button><div id="mpp"><button id="pp">Pause</button><label>Volume<input type="range" id="vol" min="0" max="40" value="9"></label></div></div>
+<script>
+/* ===== EDIT HERE ===== */
+const NAME="Tamanna", FROM="Prashant";
+const BM=11, BD=26;                      // her birthday: month, day. The countdown ends at 12:00 am on that day
+/* --- YOUR SOUNDS: put the files in the SAME folder as this HTML file, then write the exact file names here --- */
+const SONG="song.mp3";          // background music, e.g. "song.mp3"                     (empty = soft built-in melody)
+const WRONG_SOUND="wrong.mp3";   // plays when she taps a WRONG option, e.g. "wrong.mp3"  (empty = built-in buzz)
+const RIGHT_SOUND="right.mp3";   // plays when she taps the RIGHT option, e.g. "right.mp3" (empty = built-in chime)
+const GIFT_SOUND="surprise.mp3";    // plays when the gift opens, e.g. "surprise.mp3"        (empty = built-in fanfare)
+const NOTE=[                             // the lines shown after the gift opens. Change them to your own words
+ "I could not wait until midnight, so here is your birthday, a little early.",
+ "You solved every trick question. Of course you did.",
+ "Your real surprise is waiting. Come and find me."
+];
+const QS=[
+ {q:"A doctor gives you 3 pills and says: take one every 30 minutes. How long do the pills last?",o:["90 minutes","1 hour","30 minutes","3 hours"],a:1,hint:"You take the first pill right away, at minute zero.",ok:"Yes! Count the first one too."},
+ {q:"How many months of the year have 28 days?",o:["Only February","None of them","All twelve","Just one"],a:2,hint:"Read it again. Even a long month has at least 28 days.",ok:"All twelve. Sneaky, right?"},
+ {q:"You enter a dark room with one match. There is a candle, an oil lamp and a fireplace. What do you light first?",o:["The candle","The oil lamp","The fireplace","The match"],a:3,hint:"Nothing else can be lit without it.",ok:"The match, always the match."},
+ {q:"What do you own that other people use more than you do?",o:["Your phone","Your charger","Your name","Your chair"],a:2,hint:"Think about how often people say it out loud.",ok:"Your name. "+NAME+". It sounds better when I say it."},
+ {q:"Last one. Who is the most beautiful girl in the whole world?",o:["A famous actress","A princess from a story","The girl holding this phone","Nobody, it is a trick"],a:2,hint:"Look at your screen, then look at yourself.",ok:"No tricks here. It is you."}
+];
+/* ===================== */
+const $=s=>document.querySelector(s),st=$('#stage'),pad=n=>String(n).padStart(2,'0');
+const plates=k=>`<div class="dg"><div><b id="${k}0">00</b><i>days</i></div><em>:</em><div><b id="${k}1">00</b><i>hours</i></div><em>:</em><div><b id="${k}2">00</b><i>mins</i></div><em>:</em><div><b id="${k}3">00</b><i>secs</i></div></div>`;
+const early=()=>Date.now()<target().getTime();
+function target(){const n=new Date();let t=new Date(n.getFullYear(),BM-1,BD);if(n-t>864e5)t=new Date(n.getFullYear()+1,BM-1,BD);return t}
+const lines=()=>early()?['Happy Early','Birthday']:['Happy','Birthday'];
+const gift=`<svg viewBox="0 0 160 150"><ellipse cx="80" cy="140" rx="62" ry="8" fill="rgba(60,40,20,.18)"/><rect x="22" y="70" width="116" height="66" fill="#d9806f" stroke="#3b2f2a" stroke-width="2.5"/><rect x="70" y="70" width="20" height="66" fill="#f2d28a" stroke="#3b2f2a" stroke-width="2"/><g class="lid"><rect x="14" y="48" width="132" height="26" fill="#e9967f" stroke="#3b2f2a" stroke-width="2.5"/><rect x="70" y="48" width="20" height="26" fill="#f2d28a" stroke="#3b2f2a" stroke-width="2"/><path d="M80 48C60 18 36 30 52 46zM80 48C100 18 124 30 108 46z" fill="#f2d28a" stroke="#3b2f2a" stroke-width="2"/></g></svg>`;
+const env=`<svg viewBox="0 0 150 100"><rect x="4" y="10" width="142" height="86" fill="#e4d6b8" stroke="#3b2f2a" stroke-width="2"/><path d="M4 10l71 52 71-52" fill="#d6c4a0" stroke="#3b2f2a" stroke-width="2"/><circle class="seal" cx="75" cy="60" r="12" fill="#b5594e" stroke="#7a2b2b" stroke-width="2"/></svg>`;
+const pages=[
+`<span class="lab r">top secret</span><h1 class="r" style="--i:1">${NAME}</h1><div class="env r" style="--i:2">${env}</div><p class="r" style="--i:3">Something is waiting for you here. Keep the volume low and the screen to yourself.</p><button class="bt r" style="--i:4" id="begin">Tap to begin</button>`,
+`<span class="lab r">psst, ${NAME}</span><h2 class="r" style="--i:1" id="t1">A surprise is waiting</h2><p class="r" style="--i:2" id="t2">Your birthday begins in</p><div class="r" style="--i:3">${plates('a')}</div><p class="r" style="--i:4" id="t3">But I could not wait that long. Want your surprise early? Then prove you are clever.</p><button class="bt r" style="--i:5" id="go1">Challenge accepted</button>`,
+...QS.map((q,i)=>`<div class="pcs">${QS.map((_,j)=>`<i class="pc ${j<i?'on':''}" id="pc${i}_${j}"></i>`).join('')}</div><span class="lab">trick question ${i+1} of ${QS.length}</span><h2>${q.q}</h2><div class="ops" id="ops${i}">${q.o.map((t,k)=>`<button class="op" data-k="${k}" style="--r:${[-.6,.5,-.4,.6][k]}deg"><b>${'ABCD'[k]}</b><span>${t}</span></button>`).join('')}</div><p class="qm" id="qm${i}">${i?'Careful. They get trickier.':'Think carefully. These are tricky.'}</p>`),
+`<canvas id="fw"></canvas><div id="bl">${[0,1,2,3,4,5,6].map(i=>`<i class="bln" style="left:${6+i*14}%;--c:${['#d9806f','#e8b86a','#c98f9c','#8fae9a','#b5594e','#e3a36d','#9d8bb5'][i]};--dl:${i*1.3}s;--sw:${(i%2?1:-1)*24}px"></i>`).join('')}</div><div id="g0"><span class="lab">all five solved</span><div class="gift" id="gift">${gift}</div><p id="gt">Your gift is ready. Tap it to open.</p></div><div id="rv"><span class="lab">surprise!</span><h1 class="hb" id="hb"></h1><h1 class="nm"><span>${NAME}</span></h1>${NOTE.map((t,i)=>`<p class="fd" style="--i:${i}">${t}</p>`).join('')}<div class="fd" style="--i:${NOTE.length}"><p style="margin-bottom:0" id="rt">Your real birthday begins in</p>${plates('b')}</div><p class="fd" style="--i:${NOTE.length+1};font-family:'Caveat',cursive;font-style:normal;font-size:28px;color:var(--rose);margin:4px auto 0">Forever yours, ${FROM}</p></div>`
+];
+const P=pages.map((h,i)=>{const d=document.createElement('section');d.className='page';d.innerHTML=h+'<i class="gp"></i>';st.appendChild(d);return d});
+let cur=0;
+function go(n){cur=n;P.forEach((p,i)=>{p.classList.toggle('active',i===n);p.classList.toggle('past',i<n)})}
+function confetti(n=50){const c=['#b5594e','#d9a78a','#e8a33d','#8a9a7b','#c98f9c'];for(let i=0;i<n;i++){const b=document.createElement('i');b.className='bit';b.style.cssText=`left:${Math.random()*100}vw;top:-20px;background:${c[i%5]};--x:${(Math.random()-.5)*160}px;animation-delay:${Math.random()*.8}s`;document.body.appendChild(b);setTimeout(()=>b.remove(),3600)}}
+/* timers */
+const last={};
+function tickT(){const n=new Date(),df=Math.max(0,target()-n),v=[Math.floor(df/864e5),Math.floor(df/36e5)%24,Math.floor(df/6e4)%60,Math.floor(df/1e3)%60];
+ ['a','b'].forEach(k=>v.forEach((x,j)=>{const e=$('#'+k+j),t=pad(x);if(e&&last[k+j]!==t){e.textContent=t;e.classList.remove('tick');void e.offsetWidth;e.classList.add('tick');last[k+j]=t}}));
+ const e=early();$('#t1').textContent=e?'A surprise is waiting':'It is your day!';$('#t2').textContent=e?'Your birthday begins in':'The wait is over, so here it is';
+ $('#t3').textContent=e?'But I could not wait that long. Want your surprise early? Then prove you are clever.':'Happy birthday! One last thing: solve a few tricky questions to open your gift.';
+ $('#rt').textContent=e?'Your real birthday begins in':'Today is your day. Happy birthday!'}
+setInterval(tickT,500);tickT();
+/* sound effects: your file if it exists, otherwise a small built-in sound */
+let sxc=null;
+function sctx(){if(!sxc){try{sxc=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(sxc&&sxc.state=='suspended')sxc.resume();return sxc}
+function beep(f,t0,d,type,v){const c=sctx();if(!c)return;const o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.value=f;const t=c.currentTime+t0;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+d+.05)}
+function builtin(k){if(k=='wrong'){beep(220,0,.22,'sawtooth',.16);beep(165,.2,.32,'sawtooth',.16)}else if(k=='right'){beep(523,0,.2,'sine',.25);beep(659,.12,.2,'sine',.25);beep(784,.24,.4,'sine',.25)}else{[392,494,587,784].forEach((f,i)=>beep(f,i*.12,.35,'triangle',.22))}}
+const FILES={wrong:WRONG_SOUND,right:RIGHT_SOUND,gift:GIFT_SOUND},AUD={};
+Object.keys(FILES).forEach(k=>{if(FILES[k]){const a=new Audio(FILES[k]);a.preload='auto';AUD[k]=a}});
+function sfx(k){const a=AUD[k];if(!a){builtin(k);return}try{const c=a.cloneNode();c.play().catch(()=>builtin(k))}catch(e){builtin(k)}}
+/* quiz */
+const TEASE=["Hmm, not quite. Think again.","Nope. Tricky, isn't it?","So close... or not.","The question is smarter than that."];
+QS.forEach((q,i)=>{const box=$('#ops'+i);let wrong=0;box.addEventListener('click',e=>{const b=e.target.closest('.op');if(!b)return;const k=+b.dataset.k,m=$('#qm'+i);
+ if(k==q.a){sfx('right');b.classList.add('ok');P[i+2].classList.add('done');m.textContent=q.ok;const pc=$('#pc'+i+'_'+i);pc.classList.add('on','pop');confetti(26);setTimeout(()=>go(i+3),1900)}
+ else{sfx('wrong');b.classList.add('bad');wrong++;m.textContent=wrong>=2?'Hint: '+q.hint:TEASE[(wrong+i)%TEASE.length]}})});
+/* gift + reveal */
+$('#hb').innerHTML=lines().map(l=>[...l].map((c,i)=>c==' '?' ':`<b style="--k:${i}">${c}</b>`).join('')).join('<br>');
+const fw=$('#fw'),fx=fw.getContext('2d');let fr=0,fp=[];
+function burst(x,y){const c=['#b5594e','#e8a33d','#c98f9c','#6f9a86','#d9a78a'][Math.random()*5|0];for(let i=0;i<46;i++){const a=Math.PI*2*i/46,s=1.5+Math.random()*2.6;fp.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c})}}
+function fwLoop(){if(!fr)return;fx.globalCompositeOperation='destination-out';fx.fillStyle='rgba(0,0,0,.14)';fx.fillRect(0,0,fw.width,fw.height);fx.globalCompositeOperation='source-over';fp=fp.filter(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.035;p.vx*=.985;p.l-=.011;if(p.l<=0)return false;fx.globalAlpha=p.l;fx.fillStyle=p.c;fx.beginPath();fx.arc(p.x,p.y,2.2,0,7);fx.fill();return true});fx.globalAlpha=1;if(Math.random()<.04)burst(40+Math.random()*(fw.width-80),60+Math.random()*fw.height*.45);requestAnimationFrame(fwLoop)}
+$('#gift').onclick=()=>{const g=$('#gift');if(g.classList.contains('open'))return;g.classList.add('open');sfx('gift');confetti(70);
+ setTimeout(()=>{$('#g0').style.display='none';$('#rv').classList.add('show');const pg=P[P.length-1];fw.width=pg.clientWidth;fw.height=pg.clientHeight;fr=1;burst(fw.width/2,fw.height*.3);fwLoop();confetti(60)},1500)};
+/* music */
+let mus,ac,mg,on=false;
+function startMusic(){if(on)return;on=true;$('#mp').classList.add('show');
+ if(SONG){mus=new Audio(SONG);mus.loop=true;mus.volume=$('#vol').value/100;mus.play().catch(()=>{});return}
+ try{ac=new (window.AudioContext||window.webkitAudioContext)();mg=ac.createGain();mg.gain.value=.045;const dl=ac.createDelay();dl.delayTime.value=.45;const fb=ac.createGain();fb.gain.value=.4;dl.connect(fb);fb.connect(dl);mg.connect(ac.destination);mg.connect(dl);dl.connect(ac.destination);
+ const sc=[261.6,293.7,329.6,392,440,523.3,392,329.6],seq=[0,2,4,5,4,2,1,3,4,2,0,1,2,4,3,1];let i=0;
+ const note=()=>{if(!on)return;const f=sc[seq[i%seq.length]]/(i%8==1?2:1);i++;const o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,ac.currentTime);g.gain.linearRampToValueAtTime(.9,ac.currentTime+.04);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+2.2);o.connect(g);g.connect(mg);o.start();o.stop(ac.currentTime+2.3)};
+ setInterval(note,900);note()}catch(e){}}
+$('#mt0').onclick=()=>$('#mpp').classList.toggle('open');
+$('#pp').onclick=()=>{on=!on;$('#pp').textContent=on?'Pause':'Play';if(mus){if(on)mus.play().catch(()=>{});else mus.pause()}if(ac){if(on)ac.resume();else ac.suspend()}};
+$('#vol').oninput=e=>{const v=e.target.value/100;if(mus)mus.volume=v;if(mg)mg.gain.value=v*.5};
+$('#begin').onclick=()=>{startMusic();go(1)};
+$('#go1').onclick=()=>go(2);
+go(0);
+</script></body></html>
